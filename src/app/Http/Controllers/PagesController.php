@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cart;
+use App\Advertisement;
 use App\Brand;
 use App\Product;
 use App\Category;
@@ -42,7 +43,7 @@ class PagesController extends Controller {
         // From Traits/CartTrait.php
         // ( Count how many items in Cart for signed in user )
         $cart_count = $this->countProductsInCart();
-
+        $advertisement = Advertisement::first();
         // Select all products where featured = 1,
         // order by random rows, and only take 4 rows from table so we can display them on the homepage.
         $products = Product::where('featured', '=', 1)->orderByRaw('RAND()')->take(4)->get();
@@ -54,7 +55,7 @@ class PagesController extends Controller {
         $new = Product::orderBy('created_at', 'desc')->where('featured', '=', 0)->orderByRaw('RAND()')->take(4)->get();
 
 
-        return view('pages.index', compact('products', 'brands', 'search', 'new', 'cart_count', 'rand_brands'))->with('categories', $categories);
+        return view('pages.index', compact('products', 'brands', 'search', 'new', 'cart_count', 'rand_brands','advertisement'))->with('categories', $categories);
     }
 
 

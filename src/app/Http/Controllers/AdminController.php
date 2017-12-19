@@ -6,6 +6,7 @@ use App\Cart;
 use App\User;
 use App\Order;
 use App\Product;
+use App\Advertisement;
 use Illuminate\Http\Request;
 use App\Http\Traits\CartTrait;
 use Illuminate\Support\Facades\DB;
@@ -44,11 +45,14 @@ class AdminController extends Controller {
 
         // Get all the carts in DB
         $products = Product::all();
+
+        //Get all advertisements
+        $advertisements = Advertisement::all();
         
         // Select all from Products where the Product Quantity = 0
         $product_quantity = Product::where('product_qty', '=', 0)->get();
 
-        return view('admin.pages.index', compact('cart_count', 'orders', 'users', 'carts', 'count_total', 'products', 'product_quantity'));
+        return view('admin.pages.index', compact('cart_count', 'orders', 'users', 'carts', 'count_total', 'products', 'product_quantity','advertisements'));
     }
     
 

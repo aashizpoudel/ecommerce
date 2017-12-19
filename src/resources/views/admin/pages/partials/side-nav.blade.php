@@ -17,5 +17,8 @@
             <li>
                 <a href="{{ url('admin/products') }}">Products</a>
             </li>
+            <li>
+                <a href="{{ url('admin/advertisements') }}">Advertisements</a>
+            </li>
         </ul>
     </div>

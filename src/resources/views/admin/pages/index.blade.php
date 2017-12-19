@@ -102,6 +102,19 @@
 
                 </div> <!-- close col-lg-12 -->
 
+
+                <div class="col-sm-12 col-md-12">
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading primary-color-dark white-text"><i class="fa fa-money" aria-hidden="true"></i> &nbsp;Advertisements</div>
+                                <div style="overflow: auto; height: 275px;">
+                                    @include('admin.pages.partials.advertisements')
+                                </div>
+                        </div>
+                        
+                </div>
+
+
                 <div class="col-sm-12 col-md-12">
 
                         <div class="panel panel-default">

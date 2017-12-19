@@ -370,6 +370,8 @@ Route::group(["middleware" => 'admin'], function(){
     /** Post the Product Add Featured Image Route **/
     Route::post('admin/products/add/featured/{id}', 'ProductPhotosController@storeFeaturedPhoto');
 
+
+
     
     /******************************************* Brands Routes below ************************************************/
 
@@ -413,4 +415,69 @@ Route::group(["middleware" => 'admin'], function(){
     ]);
 
 });
+
+
+  /******************************************* Products Routes below ************************************************/
+
+
+    /** Show the Admin Products Page **/
+    Route::get('admin/advertisements', [
+        'uses' => '\App\Http\Controllers\AdvertisementsController@showAdvertisements',
+        'as'   => 'admin.advertisement.show',
+        'middleware' => ['auth'],
+    ]);
+
+    /** Show the Admin Add product Page **/
+    Route::get('admin/advertisements/add', [
+        'uses' => '\App\Http\Controllers\AdvertisementsController@addAdvertisement',
+        'as'   => 'admin.advertisement.add',
+        'middleware' => ['auth'],
+    ]);
+
+
+    /** Post the Add Product Route **/
+    Route::post('admin/advertisements/add', [
+        'uses' => '\App\Http\Controllers\AdvertisementsController@addPostProduct',
+        'as'   => 'admin.advertisement.post',
+        'middleware' => ['auth'],
+    ]);
+
+
+    /** Get the Edit product Page **/
+    Route::get('admin/advertisements/edit/{id}', [
+        'uses' => '\App\Http\Controllers\AdvertisementsController@editProduct',
+        'as'   => 'admin.advertisement.edit',
+        'middleware' => ['auth'],
+    ]);
+
+    /** Post the Admin Update Product Route **/
+    Route::post('admin/advertisements/update/{id}', [
+        'uses' => '\App\Http\Controllers\AdvertisementsController@updateProduct',
+        'as'   => 'admin.advertisement.update',
+        'middleware' => ['auth'],
+    ]);
+
+    /** Delete a product **/
+    Route::delete('admin/advertisements/delete/{id}', [
+        'uses' => '\App\Http\Controllers\AdvertisementsController@deleteProduct',
+        'as'   => 'admin.advertisement.delete',
+        'middleware' => ['auth'],
+    ]);
+
+    /** Get the Admin Upload Images Page **/
+    Route::get('admin/advertisements/{id}', [
+        'uses' => '\App\Http\Controllers\AdvertisementsController@displayImageUploadPage',
+        'as'   => 'admin.advertisement.upload',
+        'middleware' => ['auth'],
+    ]);
+
+    /** Post a photo to a Product **/
+    Route::post('admin/advertisements/{id}/photo', 'AdvertisementPhotosController@store');
+
+    /** Delete Product photos **/
+    Route::delete('admin/advertisements/photos/{id}', 'AdvertisementPhotosController@destroy');
+
+    /** Post the Product Add Featured Image Route **/
+    Route::post('admin/advertisements/add/featured/{id}', 'AdvertisementPhotosController@storeFeaturedPhoto');
+
 

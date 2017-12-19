@@ -8,7 +8,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand waves-effect waves-light" href="{{ url('/') }}" id="nav-bar-logo"><i class="material-icons md-48">whatshot</i></a>
+            <a class="navbar-brand waves-effect waves-light" href="{{ url('/') }}" id="nav-bar-logo">
+                <img src="{!! asset('/src/public/images/slider/fav-icon.png') !!}" alt="" width=40 height=40/>
+            </a>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
 

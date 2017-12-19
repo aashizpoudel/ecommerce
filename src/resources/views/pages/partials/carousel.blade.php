@@ -20,7 +20,7 @@
                 </a>
                 <div class="carousel-caption hidden-xs">
                     <div class="animated fadeInDown">
-                        <h1><strong><span class="color">Store</span></strong></h1>
+                        <h1><strong><span class="color">OPA-Store</span></strong></h1>
                         <p class="lead">Shop your favorite electronics, brands and more!</p>
                     </div>
                 </div>

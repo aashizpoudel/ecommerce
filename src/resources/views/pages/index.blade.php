@@ -5,10 +5,17 @@
 <div id="wrapper">
 
     @include('pages.partials.side-nav')
+
+    <div class="advertisement">
+        <a href="{{ $advertisement->link }}" target="_blank">
+            <img src="src/public/advertisements/{{ $advertisement->banner}}" alt="" width=100% height=100>
+        </a>
+    </div>
     @include('pages.partials.carousel')
 
     @include('pages.partials.mobile-header')
 
+    
     <!-- Button to toggle side-nav -->
     <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><i class="fa fa-bars fa-5x"></i></a>
 
